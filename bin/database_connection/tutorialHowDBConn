@@ -1,0 +1,14 @@
+## 1 ##  Primeira instancie a conexao
+Connection conexao = DBConn.getConexao();
+## 2 ## Segundo você cria o comando SQL na mão		
+		String SQL = " CREATE TABLE payments ("
+				+ "user_id INT AUTO_INCREMENT PRIMARY KEY,"
+				+ "nome VARCHAR(80) NOT NULL"
+				+ ")";
+## 3 ## Instancie o Statement, aquele que irá criar uma query e executar o SQL criado antes		
+		Statement stmt = conexao.createStatement();
+## 4 ## Execute o statement com o SQL
+		stmt.execute(SQL);
+		System.out.println("Tabela criada com sucesso bro");
+## 5 ## Lembre-se de Fechar a fonexão
+		conexao.close();
